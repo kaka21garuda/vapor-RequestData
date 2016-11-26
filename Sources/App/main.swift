@@ -21,10 +21,7 @@ drop.post("create") { request in
         throw Abort.badRequest
     }
     
-    return try! JSON(node: [
-            "firstname": "\(firstname)",
-            "secondname": "\(secondname)"
-    ])
+    return try! JSON(node: firstname + " " + secondname)
 }
 
 drop.get("hello") { request in
